@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class DoorDisable : MonoBehaviour
 {
+    //public GameObject door;
     // Start is called before the first frame update
-    void Start()
+    private void OnTriggerStay(Collider other)
     {
-        
-    }
+        Debug.Log("Collided");
+        if (other.tag == "Player" && Input.GetKeyDown(KeyCode.E))
+        {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            this.gameObject.SetActive(false);
+
+        }
     }
+    
 }
